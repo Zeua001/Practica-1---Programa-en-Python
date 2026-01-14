@@ -1,8 +1,6 @@
 # Calculadora.py
 WIDTH = 80
 import os
-import os
-
 def limpiar_pantalla():
     os.system("cls" if os.name == "nt" else "clear")
 
