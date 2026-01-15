@@ -28,9 +28,6 @@ while True:
                 print(str.center(f"El resultado de la suma es: {int(resultado)}", WIDTH) + "\n") # Si el resultado es un entero, lo muestra sin decimales
             else:
                 print(str.center(f"El resultado de la suma es: {resultado}", WIDTH) + "\n") # Si no, lo muestra con decimales
-            
-
-
         case "2":
             n = int(input("Cuántos numeros desea multiplicar?: "))
             producto = 1
@@ -43,9 +40,6 @@ while True:
                 print(str.center(f"El producto total es: {int(producto)}", WIDTH) + "\n")
             else:
                 print(str.center(f"El producto total es: {producto}", WIDTH) + "\n")
-
-
-
         case "4":
             n = int(input("Ingrese un numero entero para calcular su factorial: "))
 
@@ -58,14 +52,6 @@ while True:
 
                 print(str.center(f"El factorial de {n} es: {factorial}", WIDTH) + "\n")
 
-
-
-
-
-
-
-
-            
     while True:
         repetir = input("Desea realizar otra operacion? (s/n): ").lower()
         if repetir == "s":
