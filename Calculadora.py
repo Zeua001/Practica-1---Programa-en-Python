@@ -15,7 +15,9 @@ while True:
     print(str.center("2. Producto entre números", WIDTH))
     print(str.center("3. División entre 2 números", WIDTH))
     print(str.center("4. Factorial de un número", WIDTH))
-    print(str.center("5. Salir", WIDTH))
+    print(str.center("5. NONE", WIDTH))
+    print(str.center("6. Calculo del cuadrado y cubo de un número", WIDTH))
+    print(str.center("7. Salir", WIDTH))
     print()
     prompt = ("Ingrese el numero de la operacion (1/2/3/4/5):")
     opcion = input(prompt)
@@ -40,6 +42,13 @@ while True:
                 print(str.center(f"El producto total es: {int(producto)}", WIDTH) + "\n")
             else:
                 print(str.center(f"El producto total es: {producto}", WIDTH) + "\n")
+
+        case "3":
+            num1 = float(input("Ingrese el primer número"))
+            num2 = float(input("Ingrese el segundo número"))
+            res = num1 / num2
+            print(str.center(f"El resultado de la división es: {res}",WIDTH)+ "\n" )
+
         case "4":
             n = int(input("Ingrese un numero entero para calcular su factorial: "))
 
@@ -51,6 +60,15 @@ while True:
                     factorial *= i
 
                 print(str.center(f"El factorial de {n} es: {factorial}", WIDTH) + "\n")
+
+
+        case "6":
+            num = float(input("Ingrese un número: "))
+            cuadrado = num ** 2
+            cubo = num ** 3
+
+            print(str.center(f"El cuadrado de {num} es: {cuadrado}", WIDTH))
+            print(str.center(f"El cubo de {num} es: {cubo}", WIDTH) + "\n")
 
     while True:
         repetir = input("Desea realizar otra operacion? (s/n): ").lower()
