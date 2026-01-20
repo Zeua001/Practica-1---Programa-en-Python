@@ -15,11 +15,13 @@ while True:
     print(str.center("2. Producto entre números", WIDTH))
     print(str.center("3. División entre 2 números", WIDTH))
     print(str.center("4. Factorial de un número", WIDTH))
-    print(str.center("5. NONE", WIDTH))
+    print(str.center("5. Tabla de multiplicar", WIDTH))
     print(str.center("6. Calculo del cuadrado y cubo de un número", WIDTH))
-    print(str.center("7. Salir", WIDTH))
+    print(str.center("7. Promedio de una serie de numeros", WIDTH))
+    print(str.center("8. Maximo y minimo de n numeros", WIDTH))
+
     print()
-    prompt = ("Ingrese el numero de la operacion (1/2/3/4/5):")
+    prompt = ("Ingrese el numero de la operacion (1/2/3/4/5/6/7/8):")
     opcion = input(prompt)
     match opcion:
         case "1":
@@ -61,6 +63,15 @@ while True:
 
                 print(str.center(f"El factorial de {n} es: {factorial}", WIDTH) + "\n")
 
+        case "5":
+            num = int(input("Ingrese el numero de la tabla de multiplicar: "))
+            print()
+
+            for i in range(1, 11):
+                resultado = num * i
+                print(str.center(f"{num} x {i} = {resultado}", WIDTH))
+
+            print()
 
         case "6":
             num = float(input("Ingrese un número: "))
@@ -69,6 +80,49 @@ while True:
 
             print(str.center(f"El cuadrado de {num} es: {cuadrado}", WIDTH))
             print(str.center(f"El cubo de {num} es: {cubo}", WIDTH) + "\n")
+
+        case "7":
+            suma = 0
+            contador = 0
+
+            print("Ingrese números para calcular el promedio (-1 para terminar):")
+
+            while True:
+                num = float(input("Ingrese un numero: "))
+                if num == -1:
+                    break
+                suma += num
+                contador += 1
+
+            if contador == 0:
+                print(str.center("No se ingresaron numeros para calcular el promedio.", WIDTH) + "\n")
+            else:
+                promedio = suma / contador
+                if promedio.is_integer():
+                    print(str.center(f"El promedio es: {int(promedio)}", WIDTH) + "\n")
+                else:
+                    print(str.center(f"El promedio es: {promedio}", WIDTH) + "\n")
+
+        case "8":
+            n = int(input("Cuantos numeros enteros desea ingresar?: "))
+
+            if n <= 0:
+                print(str.center("La cantidad debe ser mayor a cero.", WIDTH) + "\n")
+            else:
+                num = int(input("Ingrese el numero 1: "))
+                maximo = num
+                minimo = num
+
+                for i in range(2, n + 1):
+                    num = int(input(f"Ingrese el numero {i}: "))
+                    if num > maximo:
+                        maximo = num
+                    if num < minimo:
+                        minimo = num
+
+                    print(str.center(f"Valor maximo: {maximo}", WIDTH))
+                    print(str.center(f"Valor minimo: {minimo}", WIDTH))
+                    print(str.center(f"Total de valores ingresados: {n}", WIDTH) + "\n")
 
     while True:
         repetir = input("Desea realizar otra operacion? (s/n): ").lower()
